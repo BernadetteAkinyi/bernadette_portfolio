@@ -21,26 +21,26 @@ export default function Articles() {
       .finally(() => setLoading(false));
   }, []); // empty array = run once, when the component first appears
 
-  if (loading) return <p className="text-stone-500">Loading articles…</p>;
+  if (loading) return <p className="text-ink/60">Loading articles…</p>;
   if (error)
     return (
       <p>
         Couldn't load articles right now. Read them on{" "}
-        <a href={profile.links.devto} className="underline">Dev.to</a>.
+        <a href={profile.links.devto} className="text-raspberry underline">Dev.to</a>.
       </p>
     );
-  if (articles.length === 0) return <p className="text-stone-500">Articles coming soon.</p>;
+  if (articles.length === 0) return <p className="text-ink/60">Articles coming soon.</p>;
 
   return (
     <ul className="space-y-4">
       {articles.map((a) => (
-        <li key={a.id} className="rounded-xl border border-stone-200 p-5">
-          <a href={a.url} target="_blank" rel="noreferrer" className="text-lg font-semibold underline">
-            {a.title}
-          </a>
-          <p className="mt-1 text-sm text-stone-500">{a.readable_publish_date}</p>
-          <p className="mt-2 text-stone-600">{a.description}</p>
-        </li>
+<li key={a.id} className="rounded-xl border-2 border-ink bg-white p-5 shadow-[4px_4px_0_var(--color-mint)] transition hover:-translate-y-0.5">
+  <a href={a.url} target="_blank" rel="noreferrer" className="font-display text-xl font-bold hover:text-raspberry">
+    {a.title}
+  </a>
+  <p className="mt-1 text-sm font-medium text-emerald">{a.readable_publish_date}</p>
+  <p className="mt-2 text-ink/75">{a.description}</p>
+</li>
       ))}
     </ul>
   );
