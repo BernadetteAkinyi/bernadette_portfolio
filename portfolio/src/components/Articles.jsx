@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { profile } from "../content";
 
-export default function Articles() {
+export default function Articles({limit}) {
   // Three pieces of state describe the three situations a fetch can be in.
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const shown = limit ? articles.slice(0, limit) : articles;
 
   useEffect(() => {
     // Pull "bernadetteakinyi" out of the Dev.to URL so we don't repeat it.
@@ -33,7 +34,7 @@ export default function Articles() {
 
   return (
     <ul className="space-y-4">
-      {articles.map((a) => (
+      {shown.map((a) => (
 <li key={a.id} className="rounded-xl border-2 border-ink bg-white p-5 shadow-[4px_4px_0_var(--color-mint)] transition hover:-translate-y-0.5">
   <a href={a.url} target="_blank" rel="noreferrer" className="font-display text-xl font-bold hover:text-raspberry">
     {a.title}

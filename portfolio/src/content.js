@@ -14,7 +14,7 @@ export const projects = [
   {
     title: "IRIS",
     summary: "IRIS is an adaptive accessibility companion that personalizes digital experiences to individual needs, making everyday services more inclusive, comfortable, and accessible.",
-    stack: ["Go", "React"],
+    stack: ["Go", "Javascript", "HTML", "CSS"],
     repo: "https://github.com/BernadetteAkinyi/IRIS-landing-page",
     demo: "https://iris-landing-page-amk6.onrender.com", 
   },

@@ -1,0 +1,26 @@
+/* Fraunces: a soft, slightly quirky serif that feels friendly but still professional */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,600;0,800;1,600&display=swap");
+@import "tailwindcss";
+
+/* Each token becomes utilities: --color-raspberry gives bg-raspberry, text-raspberry, etc.
+   Tailwind also exposes them as CSS variables, which we use in the shadows below. */
+@theme {
+  --color-cream: #FFF7F2;
+  --color-ink: #0F3D2E;
+  --color-raspberry: #C72A6E;
+  --color-bubblegum: #FF8FBF;
+  --color-petal: #FFD9E8;
+  --color-emerald: #1E8C64;
+  --color-mint: #CDEFD9;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+html { scroll-behavior: smooth; }
